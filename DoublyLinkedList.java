@@ -31,8 +31,7 @@ public class DoublyLinkedList implements List {
         return null;
     }
 
-    public int get(int p) throws IndexOutOfBoundsException {
-
+    public Node<String> get(int p) throws IndexOutOfBoundsException {
         return list[p];
     }
 
