@@ -1,42 +1,42 @@
-public class DoublyLinkedList implements List {
-    private String element;
-    String [] list = new String[0];
+public class DoublyLinkedList<E> implements List {
+    private E value;
+    private Node<E> head;
+    private Node<E> last;
+    Object [] list = new Object[0];
 
     public void add(Object element) {
-        String [] newlist = new String[list.length + 1];
-        for (int i = 0; i < list.length; i++){
-            newlist[i] = list[i];
+        Node<E> a = new Node<E>(element);
+        if (head == null) {
+            head = last = Node<E> ;
+        } else {
+            Node<E> temp = last;
+            last = (Node<E>) element;
+            temp.setNextNode(last);
         }
-        newlist[list.length-1] = "why";
-        list = newlist;
     }
 
     public void add(int p, Object element) throws IndexOutOfBoundsException {
-        String [] newlist = new String[list.length];
-        for (int i = 0; i < list.length; i++){
-            if (i >= p){
-                newlist[i+1] = list[i];
-            } else {
-                newlist[i] = list[i];
-            }
-        }
+        Node<E> a = (Node<E>) element;
+
+
     }
 
     public Object remove() {
+        Node<E> temp = last;
 
-        return null;
+        return temp;
     }
 
     public Object remove(int i) throws IndexOutOfBoundsException {
         return null;
     }
 
-    public Node<String> get(int p) throws IndexOutOfBoundsException {
-        return list[p];
+    public Node<E> get(int p) throws IndexOutOfBoundsException {
+        return (Node<E>) list[p];
     }
 
     public void set(int i, Object element) throws IndexOutOfBoundsException {
-
+        list[i]= (Node<E>) element;
     }
 
 
